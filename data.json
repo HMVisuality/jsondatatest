@@ -1,17 +1,188 @@
 [
   {
-    "exerciseid": 1,
-    "exercisename": "array",
+    "id": 1,
+    "name": "array",
     "title": "The JavaScript Array class is a global object that is used in the construction of arrays; which are high-level, list-like objects",
     "description": "Arrays are list-like objects whose prototype has methods to perform traversal and mutation operations. Neither the length of a JavaScript array nor the types of its elements are fixed. Since an array's length can change at any time, and data can be stored at non-contiguous locations in the array, JavaScript arrays are not guaranteed to be dense; this depends on how the programmer chooses to use them. In general, these are convenient characteristics; but if these features are not desirable for your particular use, you might consider using typed arrays.",
-
-    "arraymethods": [
+    "content": [
       {
-        "methodid": 1,
-        "methodname": "sort",
-        "methoddescription": [ "sd", "asd", "asdklfj"],
-        "methodexamples": ["sdf", "sss"]
-      }
+        "content_id": 1,
+        "content_name": "sort()",
+        "content_description": [
+          "The sort() method sorts the elements of an array in place and returns the sorted array.",
+          "<code>sort</code> TEST ONLY",
+          "JavaScript Version: ECMAScript 1",
+          "Accessing the sort method array.sort()",
+          "The sort() method sorts the items of an array",
+          "The sort order can be either alphabetic or numeric, and either ascending (up) or descending (down)",
+          "By default, the sort() method sorts the values as strings in alphabetical and ascending order",
+          "This works well for strings (\"Apple\" comes before \"Banana\"). However, if numbers are sorted as strings,\"25\"
+          is bigger than \"100\", because \"2\" is bigger than \"1\". Because of this, the sort() method will produce an
+          incorrect result when sorting number. You can fix this by providing a \"compare function\"",
+          [
+            "Syntax: array.sort(compareFunction)",
+            [
+              "(required) firstEl", "The first element for comparison."
+            ],
+            [
+              "(required) secondEl", "The second element for comparison."
+            ],
+            [
+              "(optional) compareFunction", [
+                "The second element for comparison.",
+                "Specifies a function that defines the sort order. If omitted, the array
+                elements are converted to strings, then sorted according to each
+                character's Unicode code point value.",
+                "* function(a, b){return a-b}",
+                "When the sort() method compares two values, it sends the values to the
+                compare function, and sorts the values according to the returned
+                (negative, zero, positive) value.",
+                "When comparing 40 and 100, the sort() method calls the compare function(40,100).
+                The function calculates 40-100, and returns -60 (a negative value).
+                The sort function will sort 40 as a value lower than 100."
+              ]
+            ],
+            [
+              "return value:", "The sorted array, the Array object with the items sorted"
+            ],
+            "Note: This method changes the original array, the array is sorted in place and no copy is made"
+          ],
+          "for more visit W3C/MDN",
+          "https://www.w3schools.com/JSREF/jsref_sort.asp",
+          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort"
+        ],
+        "content_examples": [
+          [
+            "EX:1 & EX:2",
+            "EX:1 & EX:2 demonstrates the output when the sort() method is used without an compare function.",
+            "If compare function is not supplied, all non-undefined array elements are sorted by
+            converting them to strings and comparing strings in UTF-16 code units order.",
+            "For example, \"banana\" comes before \"cherry\". In a numeric sort, 9 comes before 80, but because numbers are converted to strings, \"80\" comes before \"9\" in the Unicode order.
+            All undefined elements are sorted to the end of the array."
+          ],
+          {
+            "example_id": 1,
+            "example_name": "Example 1 - sort()",
+            "example_abbreviation": "ex:1",
+            "example_title": "Sort the strings in the fruits array in ascending sort order (default)",
+            "example_data":[
+              "test array:",
+              "* ['Banana', 'Cherry', 'Orange', 'Apple', 'Mango']",
+              "expected output",
+              "* ['Apple', 'Banana', 'Cherry', 'Mango', 'Orange']"
+            ],
+            "example_code": [
+              "const fruits = ['Banana', 'Cherry', 'Orange', 'Apple', 'Mango']",
+              "fruits.sort()"
+            ]
+          },
+          {
+            "example_id": 2,
+            "example_name": "Example 2 - sort()",
+            "example_abbreviation": "ex:2",
+            "example_title": "sort the numbers in the numArr1 array in ascending sort order (default)",
+            "example_data":[
+              "test array:",
+              "* [40, 100, 1, 5, 25, 10]",
+              "expected output",
+              "* [1, 10, 100, 25, 40, 5]"
+            ],
+            "example_code": [
+              "const numArr1 = [40, 100, 1, 5, 25, 10]",
+              "numArr1.sort()"
+            ]
+          },
+          {
+            "example_id": 3,
+            "example_name": "Example 3 - sort()",
+            "example_abbreviation": "ex:3",
+            "example_title": "sort method in this example is supplied with an compare function and the numbers in the numArr2 array are sorted in ascending order",
+            "example_data":[
+              "test array:",
+              "* [40, 100, 1, 5, 25, 10]",
+              "expected output",
+              "* [ 1, 5, 10, 25, 40, 100 ]"
+            ],
+            "example_code": [
+              "const numArr2 = [40, 100, 1, 5, 25, 10]",
+              "numbersArr1.sort(function(a, b) {return a - b})"
+            ]
+          }
+        ]
+      },
+      {
+        "content_id": 2,
+        "content_name": "map()",
+        "content_description": [
+          "The map() method creates a new array with the results of calling a function for every
+          array element including undefined values.",
+          "JavaScript Version: ECMAScript 5.",
+          "Accessing the map method array.map().",
+          "map calls a provided callback function once for every array element, in order.",
+          "map does not execute the function for array elements without values.",
+          "This method does not change/modify the original array.",
+          "The range of elements processed by map is set before the first invocation of callback.
+          Elements which are appended to the array after the call to map begins will not be visited by callback.",
+          "The map() method creates a new array with each element being the result of the callback function.",
+          "You shouldn't be using map if: you're not using the array it returns; and/or you're not returning a value from the callback.",
+          "The callback function within the map() method accepts 4 parameters",
+          [
+            "Syntax: array.map((currentValue, index, array, thisValue) => {})",
+            [
+              "(required) currentValue", "The current element being processed in the array."
+            ],
+            [
+              "(optional) index", "The array index of the current element."
+            ],
+            [
+              "(optional) array", "The array object the current element belongs to."
+            ],
+            [
+              "(optional) thisValue", "A value to be passed to the function to be used as its \"this\" value."
+            ],
+            [
+              "return value:", "A new array with each element being the result of the callback function"
+            ],
+          ],
+          "for more visit MDN",
+          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map"
+        ],
+        "content_examples": [
+          {
+            "example_id": 1,
+            "example_name": "Example 1 - map()",
+            "example_abbreviation": "ex:1",
+            "example_title": "Map over every item in the numbers array and multiply it with its index",
+            "example_data":[
+              "test array:",
+              "* [1, 2, 3, 4, 5]",
+              "expected output",
+              "* [2, 4, 6, 8, 10]"
+            ],
+            "example_code": [
+              "const numbers = [1, 2, 3, 4, 5]",
+              "let multiplyNumbers = numbers.map( (number, index) => {
+                return number * index
+              })",
+              "console.log(multiplyNumbers) // [2, 4, 6, 8, 10]"
+            ]
+          },
+          {
+            "example_id": 2,
+            "example_name": "Example 2 - map()",
+            "example_abbreviation": "ex:2",
+            "example_title": "Map the objects in the persons array and get the full name for each person",
+            "example_data": [
+              "test array:",
+              "* [1, 2, 3]"
+            ],
+            "example_code": [
+              "test code:",
+              "* const nums = [1, 2, 3]"
+            ]
+          }
+        ]
+      },
     ]
-  }
+  },
 ]
