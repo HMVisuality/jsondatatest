@@ -16,9 +16,7 @@
           "The sort() method sorts the items of an array",
           "The sort order can be either alphabetic or numeric, and either ascending (up) or descending (down)",
           "By default, the sort() method sorts the values as strings in alphabetical and ascending order",
-          "This works well for strings (\"Apple\" comes before \"Banana\"). However, if numbers are sorted as strings,\"25\"
-          is bigger than \"100\", because \"2\" is bigger than \"1\". Because of this, the sort() method will produce an
-          incorrect result when sorting number. You can fix this by providing a \"compare function\"",
+          "This works well for strings (\"Apple\" comes before \"Banana\"). However, if numbers are sorted as strings,\"25\" is bigger than \"100\", because \"2\" is bigger than \"1\". Because of this, the sort() method will produce an incorrect result when sorting number. You can fix this by providing a \"compare function\"",
           [
             "Syntax: array.sort(compareFunction)",
             [
@@ -30,16 +28,10 @@
             [
               "(optional) compareFunction", [
                 "The second element for comparison.",
-                "Specifies a function that defines the sort order. If omitted, the array
-                elements are converted to strings, then sorted according to each
-                character's Unicode code point value.",
+                "Specifies a function that defines the sort order. If omitted, the array elements are converted to strings, then sorted according to each character's Unicode code point value.",
                 "* function(a, b){return a-b}",
-                "When the sort() method compares two values, it sends the values to the
-                compare function, and sorts the values according to the returned
-                (negative, zero, positive) value.",
-                "When comparing 40 and 100, the sort() method calls the compare function(40,100).
-                The function calculates 40-100, and returns -60 (a negative value).
-                The sort function will sort 40 as a value lower than 100."
+                "When the sort() method compares two values, it sends the values to the compare function, and sorts the values according to the returned (negative, zero, positive) value.",
+                "When comparing 40 and 100, the sort() method calls the compare function(40,100). The function calculates 40-100, and returns -60 (a negative value). The sort function will sort 40 as a value lower than 100."
               ]
             ],
             [
@@ -55,10 +47,8 @@
           [
             "EX:1 & EX:2",
             "EX:1 & EX:2 demonstrates the output when the sort() method is used without an compare function.",
-            "If compare function is not supplied, all non-undefined array elements are sorted by
-            converting them to strings and comparing strings in UTF-16 code units order.",
-            "For example, \"banana\" comes before \"cherry\". In a numeric sort, 9 comes before 80, but because numbers are converted to strings, \"80\" comes before \"9\" in the Unicode order.
-            All undefined elements are sorted to the end of the array."
+            "If compare function is not supplied, all non-undefined array elements are sorted by converting them to strings and comparing strings in UTF-16 code units order.",
+            "For example, \"banana\" comes before \"cherry\". In a numeric sort, 9 comes before 80, but because numbers are converted to strings, \"80\" comes before \"9\" in the Unicode order. All undefined elements are sorted to the end of the array."
           ],
           {
             "example_id": 1,
@@ -114,15 +104,13 @@
         "content_id": 2,
         "content_name": "map()",
         "content_description": [
-          "The map() method creates a new array with the results of calling a function for every
-          array element including undefined values.",
+          "The map() method creates a new array with the results of calling a function for every array element including undefined values.",
           "JavaScript Version: ECMAScript 5.",
           "Accessing the map method array.map().",
           "map calls a provided callback function once for every array element, in order.",
           "map does not execute the function for array elements without values.",
           "This method does not change/modify the original array.",
-          "The range of elements processed by map is set before the first invocation of callback.
-          Elements which are appended to the array after the call to map begins will not be visited by callback.",
+          "The range of elements processed by map is set before the first invocation of callback. Elements which are appended to the array after the call to map begins will not be visited by callback.",
           "The map() method creates a new array with each element being the result of the callback function.",
           "You shouldn't be using map if: you're not using the array it returns; and/or you're not returning a value from the callback.",
           "The callback function within the map() method accepts 4 parameters",
@@ -161,9 +149,9 @@
             ],
             "example_code": [
               "const numbers = [1, 2, 3, 4, 5]",
-              "let multiplyNumbers = numbers.map( (number, index) => {
+              `let multiplyNumbers = numbers.map( (number, index) => {
                 return number * index
-              })",
+              })`,
               "console.log(multiplyNumbers) // [2, 4, 6, 8, 10]"
             ]
           },
